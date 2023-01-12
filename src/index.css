@@ -31,8 +31,6 @@ body {
   .moveList {
     color: silver;
     font-weight: 900;
-    /* font-size: 1.1vw; */
-    /* font-size: 30px; font-size affects only numbers in li */
     background-color: rgba(0, 0, 0, 0);
     margin-top: 5px;
   }
@@ -40,7 +38,6 @@ body {
   .changeBtn {
     color: gold;
     background-color: purple;
-    /* padding: 3; */
     font-size: 1.2vw;
     border-radius: 10px;
     margin-left: 5px;
@@ -49,47 +46,24 @@ body {
   .square {
     height: 10vw;
     width: 10vw;
-    /* max-height: 180px;
-    max-width: 180px; */
-
     font-family: 'Raleway', sans-serif;
     text-align: center;
-    /* line-height: 0.5em; */
-    /* line-height: 10vw; */
-    /* line-height: 0.5vw; */
     font-size: 7.5vw;
-    /* line-height: calc((100% - 10vw)/2); */
-    /* padding-bottom: calc((100% - 10vw)/2); */
     background-color: rgba(0, 0, 0, 0);
     border: 1px solid rgb(255, 255, 255);
     float: left;
     margin-right: -1px;
     margin-top: -1px;
-    /* padding-bottom: 0px; */
-
-    /* display: flex; 
-    align-items: center;
-    text-align: center; */
-    /* justify-content: center; */
   }
 
   .square:focus {
     outline: none;
   }
 
-  .game-board {
-    /* height: 30vw;
-    width: 30vw; */
-  }
-
     /* It's crucial to keep "winningSquares" below 'square' class as it should overwrite it */
   .winningSquares {
-    /* background-color: #5EC059; Green from logo */
-    /* background-color: #199233; better green */
-    /* background-color: green; */
-    /* background-color: purple; */
     background-color: rgb(0, 98, 0, 0.7);
-    color: green; /* doesn't work due to overwritting by style prop */
+    color: green;
     font-family: 'Raleway', sans-serif; 
   }
   
@@ -101,119 +75,117 @@ body {
     display: flex;
     width: 30vw; /* without setting width "margin: 0 auto;" doesn't work */
     margin: 0 auto;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
 
   }
   
   .game-info {
     margin-left: 20px;
-    display: block;
+    display: inline-block;
   }
   
-/* Responsive sizing */
-  @media (max-width: 1600px) {
-    .game {
-      width: 36vw;
-    }
-
-    .square {
-      width: 12vw;
-      height: 12vw;
-      font-size: 9vw;
-    }
+    /* Responsive styling in order of decreasing screen size */
+@media (min-width: 1750px) {
+  .game {
+    width: 510px;
   }
 
-  @media (max-width: 1200px) {
-    .game {
-      width: 42vw;
-    }
+  .square {
+    font-size: 130px;
+  }
+}
 
-    .square {
-      width: 14vw;
-      height: 14vw;
-      font-size: 10.5vw;
-    }
+@media (max-width: 1600px) {
+  .game {
+    width: 36vw;
   }
 
-  @media (max-width: 1200px) {
-    .game {
-      width: 42vw;
-    }
+  .square {
+    width: 12vw;
+    height: 12vw;
+    font-size: 9vw;
+  }
+}
 
-    .square {
-      width: 14vw;
-      height: 14vw;
-      font-size: 10.5vw;
-    }
-
-    .status {
-      font-size: 3vw;
-    }
-
-    .changeBtn {
-      font-size: 2vw;
-      /* border-radius: 10px;
-      margin-left: 5px; */
-    }
-
-    .moveList-li-button {
-      /* font-weight: 900;
-      font-size: 5vw; */
-      /* margin-top: 5px; */
-      /* font-size: 5vw; */
-    }
+@media (max-width: 1200px) {
+  .game {
+    width: 42vw;
   }
 
-  @media (max-width: 1000px) {
-    .game {
-      width: 48vw;
-    }
-
-    .square {
-      width: 16vw;
-      height: 16vw;
-      font-size: 12vw;
-    }
+  .square {
+    width: 14vw;
+    height: 14vw;
+    font-size: 10.5vw;
   }
 
-  @media (max-width: 800px) {
-    .game {
-      width: 81vw;
-    }
-
-    .square {
-      width: 27vw;
-      height: 27vw;
-      font-size: 20.75vw;
-    }
-
-    .moveList li { /*works only with list numbers */
-      /* font-size: 5vw; */
-    }
-
-    .game-info button {
-      font-size: 5vw;  
-    }
+  .status {
+    font-size: 35px;
   }
 
-  @media (min-width: 1750px) {
-    .game {
-      width: 510px;
-    }
-
-    .square {
-      max-width: 170px;
-      max-height: 170px;
-      /* line-height: 0; */
-      /* line-height: 0.5vw; */
-      /* font-size: 8vw; */
-      font-size: 130px;
-      /* position: relative; */
-      /* top: -200px; */
-      /* bottom: -200px; */
-      /* padding-top: 0px; */
-      /* padding-bottom: -220px; */
-      /* padding-top: -250px; */
-    }
+  .changeBtn {
+    font-size: 18px;   
   }
+}
+
+@media (min-width: 1000px) {
+  .game {
+    display: flex;
+    width: 82vw; /* without setting width "margin: 0 auto;" doesn't work */
+    margin: 50px;
+  }
+
+  .game-info {
+    margin-top: 4vw;
+    margin-left: 30px;
+  }
+  /* While playing, name of status changes the width of game-info pushing the game-board. For avoiding it, width should be set leaving space for characters. */
+  .status {
+    width: 7em;
+  }
+}
+
+@media (max-width: 1000px) {
+  .game {
+    width: 60vw;
+    flex-direction: column; /* For narrow screens game-info will be displayed below the board */
+  }
+
+  .square {
+    width: 20vw;
+    height: 20vw;
+    font-size: 16vw;
+  }
+}
+
+@media (max-width: 800px) {
+  .game {
+    width: 81vw;
+  }
+
+  .square {
+    width: 27vw;
+    height: 27vw;
+    font-size: 20.75vw;
+  }
+}
+
+@media (max-width: 350px) {
+  .status {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 290px) {
+  .status {
+    font-size: 25px;
+  }
+
+  .changeBtn {
+    font-size: 15px;
+  }
+
+  .game-info {
+    margin-left: 0px;
+  }
+}

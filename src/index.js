@@ -43,7 +43,7 @@ class Board extends React.Component {
                 key={'square #' + i + 1} // I've decided that unique keys will be 1-9, not 0-8
                 value={this.props.squares[i]}
                 onClick={() => this.props.onClick(i)}
-                isWinningSquare={this.props.winningSquares ? this.checkSquares(i, this.props.winningSquares) : "square"} // if there are winningSquares - we check if one of them is currently compiled and assign proper class with highlighting style
+                isWinningSquare={this.props.winningSquares ? this.checkSquares(i, this.props.winningSquares) : "square"} // if there are winningSquares - we check if one of them is currently compiled and assign proper highlighting class if necessary
                 style={this.props.squares[i]==='x' ? styles.cross : styles.circle}
             />
         );
@@ -93,21 +93,18 @@ class Game extends React.Component {
     }
 
     handleClick(i) {
-            // Replacing reading this.state.history with this.state.history.slice(0, this.state.stepNumber + 1). This ensures that if we “go back in time” and then make a new move from that point, we throw away all the “future” history that would now be incorrect.
         const history = this.state.history.slice(0, this.state.stepNumber + 1); // The array of objects like in the line below
-        const current = history[history.length - 1]; // Object with key and Array of squares from the last move e.g.: squares: ['O', null, null, null, null, 'X', 'X', null, null]
-        const squares = current.squares.slice(); // Array of squares from the last move e.g.: ['O', null, null, null, null, 'X', 'X', null, null]
+        const current = history[history.length - 1]; // Object with the value of an array of squares from the last move e.g.: squares: ['O', null, null, null, null, 'X', 'X', null, null]
+        const squares = current.squares.slice(); // Extracting the copy of an array described in the line above
 
-        let coordinatesHistory = this.state.coordinatesHistory.slice(0, this.state.stepNumber); // if jump() function changed stepNumber - this line slices "future" history
+        let coordinatesHistory = this.state.coordinatesHistory.slice(0, this.state.stepNumber); // if jump() function changed stepNumber - the slice method "cuts out" history with "future" moves
 
-        if (calculateWinner(squares)[0] || squares[i]) { // if  we have a winner or the clicked square is already filled - the function won't do anything more
-            return;
-        }
+        if (calculateWinner(squares)[0] || squares[i]) return; // if  we have a winner or the clicked square is already filled - the function won't do anything more
+
         squares[i] = this.state.xIsNext ? 'x' : 'o';
 
-            // Assigning the coordinates of the last move
-        // let coordinatesHistory = this.state.coordinatesHistory; 
-        let coordinates; // (col, row)
+        // Assigning the coordinates of the last move
+        let coordinates;
         switch (i) {
             case 0:
                 coordinates = {
@@ -165,20 +162,17 @@ class Game extends React.Component {
         }
 
         this.setState({
-                // Unlike the array push(), the concat() method doesn’t mutate the original array, so we prefer it
             history: history.concat([
                 {
                     squares: squares
                 }
             ]),
-                // The stepNumber state we’ve added reflects the move displayed to the user now. After we make a new move, we need to update stepNumber by adding stepNumber: history.length as part of the this.setState argument. This ensures we don’t get stuck showing the same move after a new one has been made.
-            stepNumber: history.length, // here we shorten history array when we jump to one of  previous moves
+            stepNumber: history.length, // here the history array is shortened  when we jump to one of previous moves
             xIsNext: !this.state.xIsNext,
             coordinatesHistory: coordinatesHistory.concat([coordinates]), // concat merges two arrays and without affecting them returns a brand new one
         });
     }
 
-    // Notice in jumpTo method, we haven’t updated history property of the state. That is because state updates are merged or in more simple words React will update only the properties mentioned in setState method leaving the remaining state as is. For more info see the documentation.
     jumpTo(step) {
         this.setState({
             stepNumber: step,
@@ -232,7 +226,6 @@ class Game extends React.Component {
             );
         });
 
-        
         let status;
         if (winner) {
           status = 'Winner: ' + winner;
@@ -268,28 +261,27 @@ class Game extends React.Component {
 
   // ========================================
   
-  const root = ReactDOM.createRoot(document.getElementById("root"));
-  root.render(<Game />);
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<Game />);
 
-    // As an argument (in parameter below) will be provided an array of squares from the last move, e.g.: ['O', null, null, null, null, 'X', 'X', null, null]
-  function calculateWinner(squares) { 
+// As an argument (in parameter below) will be provided an array of squares from the last move, e.g.: ['O', null, null, null, null, 'X', 'X', null, null]
+function calculateWinner(squares) { 
     const lines = [
-      [0, 1, 2],
-      [3, 4, 5],
-      [6, 7, 8],
-      [0, 3, 6],
-      [1, 4, 7],
-      [2, 5, 8],
-      [0, 4, 8],
-      [2, 4, 6],
-    ];
-    for (let i = 0; i < lines.length; i++) {
-      const [a, b, c] = lines[i];
-      if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
-        // return squares[a]; // 'X' or 'O'
-        return [squares[a], lines[i]];
-      }
+        [0, 1, 2],
+        [3, 4, 5],
+        [6, 7, 8],
+        [0, 3, 6],
+        [1, 4, 7],
+        [2, 5, 8],
+        [0, 4, 8],
+        [2, 4, 6],
+];
+
+for (let i = 0; i < lines.length; i++) {
+    const [a, b, c] = lines[i];
+        if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
+            return [squares[a], lines[i]]; // Returns the array with a winning sign ('x' or 'o') and an array with numbers of squares which caused a win
     }
-    // return null;
+}
     return [null, null];
-  }
+}
