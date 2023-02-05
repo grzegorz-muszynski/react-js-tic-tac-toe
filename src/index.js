@@ -252,7 +252,7 @@ class Game extends React.Component {
                             onClick={() => this.toggleOrder()}
                         />
                     </div>
-                    <ol className='moveList'>{moves}</ol>
+                    <ol reversed={this.state.isDescending ? true : false} className='moveList'>{moves}</ol>
                 </div>
             </div>
         );
