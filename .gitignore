@@ -26,3 +26,4 @@ yarn-error.log*
 # ignore the file literally named test.txt
 temporary.txt
 test.txt
+test2.txt
