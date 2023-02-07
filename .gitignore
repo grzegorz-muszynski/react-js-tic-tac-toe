@@ -21,3 +21,6 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# ignore the file literally named temporary.txt
+# ignore the file literally named test.txt
