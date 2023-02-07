@@ -61,7 +61,7 @@ class Board extends React.Component {
     createTable() {
         let table = [];
         for (let n = 0; n < 7; n+=3) {
-            table.push(<div className="board-row">{this.createRow(n)}</div>);
+            table.push(<div key={'row #' + (n/3 + 1)} className="board-row">{this.createRow(n)}</div>);
         }
         return table;
     }
