@@ -2,7 +2,6 @@ const moveRecord = {
     fontFamily: 'SF-AtarianSystem',
     color: 'azure',
     backgroundColor: 'rgba(0, 0, 0, 0)',
-    padding: '0px 0vw',
     fontSize: '22px',
 }
 
@@ -11,7 +10,6 @@ const currentMoveRecord = {
     fontWeight: '100',
     color: 'gold',
     backgroundColor: 'rgba(0, 0, 0, 0)',
-    padding: '0px 0.4vw',
     fontSize: '22px',
 }
 

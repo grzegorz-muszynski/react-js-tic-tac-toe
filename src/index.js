@@ -232,7 +232,7 @@ class Game extends React.Component {
         } else if (this.isDraw(current.squares)) {
             status = 'Draw!';
         } else {
-          status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
+          status = 'Next player: ' + (this.state.xIsNext ? 'x' : 'o');
         }
 
         return (
