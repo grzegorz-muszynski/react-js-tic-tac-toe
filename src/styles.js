@@ -4,7 +4,7 @@ const moveRecord = {
     color: 'azure',
     backgroundColor: 'rgba(0, 0, 0, 0)',
     padding: '0px 0vw',
-    fontSize: '17px',
+    fontSize: '22px',
 }
 
 const currentMoveRecord = {
@@ -14,7 +14,7 @@ const currentMoveRecord = {
     color: 'gold',
     backgroundColor: 'rgba(0, 0, 0, 0)',
     padding: '0px 0.4vw',
-    fontSize: '17px',
+    fontSize: '22px',
 }
 
 const cross = {

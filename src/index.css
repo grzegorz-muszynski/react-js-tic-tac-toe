@@ -25,17 +25,18 @@ body {
   
   .status {
     margin: 10px 0;
-    font-size: 2vw;
+    font-size: 50px;
     /* width: 13.5vw; */
     width: fit-content;
-    padding: 0px 0.4vw;
+    padding-top: 3px;
+    /* padding: 0px 0.4vw; */
     /* background-color: azure; */
     color: #f9e105;
   }
 
   .moveList {
     font-family: 'Liliput Steps';
-    font-size: 16px;
+    font-size: 22px;
     color: silver;
     font-weight: 100;
     background-color: rgba(0, 0, 0, 0);
@@ -45,13 +46,14 @@ body {
 
   .changeBtn {
     font-family: 'Liliput Steps';
-    font-family: 'Raleway';
-    font-weight: 1000;
+    /* font-family: 'Raleway'; */
+    font-weight: 100;
     color: gold;
-    background-color: purple;
-    font-size: 1.2vw;
+    background-color: hsl(300, 100%, 25%, 0.7);
+    font-size: 30px;
     border-radius: 10px;
     margin-left: 5px;
+    padding-top: 5px;
   }
 
   .square {
@@ -131,11 +133,11 @@ body {
   }
 
   .status {
-    font-size: 35px;
+    font-size: 40px;
   }
 
   .changeBtn {
-    font-size: 18px;   
+    font-size: 22px;   
   }
 }
 
@@ -178,6 +180,12 @@ body {
     width: 27vw;
     height: 27vw;
     font-size: 20.75vw;
+  }
+}
+
+@media (max-width: 380px) {
+  .game-info {
+    margin-left: 0px;
   }
 }
 
