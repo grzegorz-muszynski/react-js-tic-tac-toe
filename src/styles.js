@@ -1,5 +1,6 @@
 const moveRecord = {
-    fontFamily: 'Raleway, sans-serif',
+    fontFamily: 'Liliput Steps',
+    // fontFamily: 'Raleway, sans-serif',
     color: 'azure',
     backgroundColor: 'rgba(0, 0, 0, 0)',
     padding: '0px 0.4vw',
@@ -7,12 +8,13 @@ const moveRecord = {
 }
 
 const currentMoveRecord = {
-    fontFamily: 'Raleway, sans-serif',
-    fontWeight: 'bold',
+    fontFamily: 'Liliput Steps',
+    // fontFamily: 'Raleway, sans-serif',
+    fontWeight: '100',
     color: 'gold',
     backgroundColor: 'rgba(0, 0, 0, 0)',
     padding: '0px 0.4vw',
-    fontSize: '17px',
+    fontSize: '19px',
 }
 
 const cross = {

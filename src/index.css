@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200&family=Roboto:wght@300&display=swap');
 
+@font-face { 
+  font-family: 'Liliput Steps'; 
+  src: url('LilliputSteps.otf'); 
+} 
+
 body {
     /* font: 14px "Century Gothic", Futura, sans-serif; */
     font: 14px "Century Gothic", Futura, sans-serif;
@@ -29,8 +34,10 @@ body {
   }
 
   .moveList {
+    font-family: 'Liliput Steps';
+    font-size: 18px;
     color: silver;
-    font-weight: 900;
+    font-weight: 100;
     background-color: rgba(0, 0, 0, 0);
     margin-top: 5px;
   }
