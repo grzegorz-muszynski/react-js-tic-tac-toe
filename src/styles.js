@@ -14,7 +14,7 @@ const currentMoveRecord = {
 }
 
 const cross = {
-    color: 'red'
+    color: 'red',
 }
 
 const circle = {
