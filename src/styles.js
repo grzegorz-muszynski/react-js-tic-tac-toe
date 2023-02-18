@@ -3,7 +3,7 @@ const moveRecord = {
     // fontFamily: 'Raleway, sans-serif',
     color: 'azure',
     backgroundColor: 'rgba(0, 0, 0, 0)',
-    padding: '0px 0.4vw',
+    padding: '0px 0vw',
     fontSize: '17px',
 }
 
@@ -14,7 +14,7 @@ const currentMoveRecord = {
     color: 'gold',
     backgroundColor: 'rgba(0, 0, 0, 0)',
     padding: '0px 0.4vw',
-    fontSize: '19px',
+    fontSize: '17px',
 }
 
 const cross = {

@@ -2,12 +2,12 @@
 
 @font-face { 
   font-family: 'Liliput Steps'; 
-  src: url('LilliputSteps.otf'); 
+  src: url('LilliputSteps.ttf'); 
 } 
 
 body {
     /* font: 14px "Century Gothic", Futura, sans-serif; */
-    font: 14px "Century Gothic", Futura, sans-serif;
+    font: 14px "Liliput Steps", Futura, sans-serif;
     margin: 20px;
     background-image: url("../public/images/stars.jpg");
     background-size: cover;
@@ -35,14 +35,18 @@ body {
 
   .moveList {
     font-family: 'Liliput Steps';
-    font-size: 18px;
+    font-size: 16px;
     color: silver;
     font-weight: 100;
     background-color: rgba(0, 0, 0, 0);
     margin-top: 5px;
+    margin-left: 15px;
   }
 
   .changeBtn {
+    font-family: 'Liliput Steps';
+    font-family: 'Raleway';
+    font-weight: 1000;
     color: gold;
     background-color: purple;
     font-size: 1.2vw;
@@ -148,7 +152,7 @@ body {
   }
   /* While playing, name of status changes the width of game-info pushing the game-board. For avoiding it, width should be set leaving space for characters. */
   .status {
-    width: 7em;
+    width: 8em;
   }
 }
 
