@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200&family=Roboto:wght@300&display=swap');
 
 @font-face { 
-  font-family: 'Liliput Steps'; 
-  src: url('LilliputSteps.ttf'); 
+  font-family: 'SF-AtarianSystem'; 
+  src: url('SF-AtarianSystem.ttf'); 
 } 
 
 body {
     /* font: 14px "Century Gothic", Futura, sans-serif; */
-    font: 14px "Liliput Steps", Futura, sans-serif;
+    font: 14px "SF-AtarianSystem", Futura, sans-serif;
     margin: 20px;
     background-image: url("../public/images/stars.jpg");
     background-size: cover;
@@ -26,16 +26,13 @@ body {
   .status {
     margin: 10px 0;
     font-size: 50px;
-    /* width: 13.5vw; */
     width: fit-content;
     padding-top: 3px;
-    /* padding: 0px 0.4vw; */
-    /* background-color: azure; */
     color: #f9e105;
   }
 
   .moveList {
-    font-family: 'Liliput Steps';
+    font-family: 'SF-AtarianSystem';
     font-size: 22px;
     color: silver;
     font-weight: 100;
@@ -45,7 +42,7 @@ body {
   }
 
   .changeBtn {
-    font-family: 'Liliput Steps';
+    font-family: 'SF-AtarianSystem';
     /* font-family: 'Raleway'; */
     font-weight: 100;
     color: gold;
@@ -144,8 +141,8 @@ body {
 @media (min-width: 1000px) {
   .game {
     display: flex;
-    width: 82vw; /* without setting width "margin: 0 auto;" doesn't work */
-    margin: 50px;
+    width: 82vw;
+    margin: 0 auto;
   }
 
   .game-info {
@@ -196,14 +193,6 @@ body {
 }
 
 @media (max-width: 290px) {
-  .status {
-    font-size: 25px;
-  }
-
-  .changeBtn {
-    font-size: 15px;
-  }
-
   .game-info {
     margin-left: 0px;
   }

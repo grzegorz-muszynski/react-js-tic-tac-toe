@@ -1,6 +1,5 @@
 const moveRecord = {
-    fontFamily: 'Liliput Steps',
-    // fontFamily: 'Raleway, sans-serif',
+    fontFamily: 'SF-AtarianSystem',
     color: 'azure',
     backgroundColor: 'rgba(0, 0, 0, 0)',
     padding: '0px 0vw',
@@ -8,8 +7,7 @@ const moveRecord = {
 }
 
 const currentMoveRecord = {
-    fontFamily: 'Liliput Steps',
-    // fontFamily: 'Raleway, sans-serif',
+    fontFamily: 'SF-AtarianSystem',
     fontWeight: '100',
     color: 'gold',
     backgroundColor: 'rgba(0, 0, 0, 0)',
